@@ -1,0 +1,50 @@
+{
+  "name": "nba-stats",
+  "version": "0.1.0",
+  "author": "yankostadinov@gmail.com",
+  "main": "build/electron.js",
+  "homepage": "./",
+  "build": {
+    "appId": "nba-stats",
+    "files": [
+      "build/**/*"
+    ]
+  },
+  "private": true,
+  "dependencies": {
+    "electron-is-dev": "^1.2.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "scripts": {
+    "start": "webpack --mode development",
+    "build": "webpack --mode production",
+    "watch": "webpack-dev-server",
+    "electron-watch": "concurrently \"SET BROWSER=none && yarn watch\" \"wait-on http://localhost:8080 && electron .\"",
+    "preelectron-pack": "yarn build",
+    "electron-pack": "electron-builder -c.extraMetadata.main=build/electron.js"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "concurrently": "^5.2.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.5.3",
+    "electron": "^8.2.5",
+    "electron-builder": "^22.6.0",
+    "electron-reload": "^1.5.0",
+    "eslint": "^6.6.0",
+    "eslint-plugin-react": "7.19.0",
+    "react-hot-loader": "^4.12.21",
+    "style-loader": "^1.2.1",
+    "wait-on": "^5.0.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
