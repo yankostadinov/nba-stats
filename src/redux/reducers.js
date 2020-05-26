@@ -1,19 +1,9 @@
 import { combineReducers } from 'redux';
-import { APPLY_FILTER, GET_PLAYER_STATS, SET_PLAYERS } from './actions';
-
-const searchFilter = (state = '', action) => {
-  switch (action.type) {
-    case APPLY_FILTER:
-      return action.searchFilter;
-
-    default:
-      return state;
-  }
-};
+import { PLAYERS_RECEIVED, PLAYER_STATS_RECEIVED } from './actions';
 
 const players = (state = [], action) => {
   switch (action.type) {
-    case SET_PLAYERS:
+    case PLAYERS_RECEIVED:
       return action.players;
 
     default:
@@ -23,10 +13,10 @@ const players = (state = [], action) => {
 
 const playerStats = (state = {}, action) => {
   switch (action.type) {
-    case GET_PLAYER_STATS:
+    case PLAYER_STATS_RECEIVED:
       return {
         ...state,
-        [action.personId]: 'placeholder',
+        [action.personId]: action.stats,
       };
 
     default:
@@ -37,5 +27,4 @@ const playerStats = (state = {}, action) => {
 export default combineReducers({
   players,
   playerStats,
-  searchFilter,
 });

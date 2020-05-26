@@ -1,8 +1,11 @@
-export const APPLY_FILTER = 'APPLY_FILTER';
-export const applySearchFilter = searchFilter => ({ type: APPLY_FILTER, searchFilter });
+export const PLAYERS_REQUESTED = 'PLAYERS_REQUESTED';
+export const fetchPlayers = () => ({ type: PLAYERS_REQUESTED });
 
-export const SET_PLAYERS = 'SET_PLAYERS';
-export const setPlayers = players => ({ type: SET_PLAYERS, players });
+export const PLAYERS_RECEIVED = 'PLAYERS_RECEIVED';
+export const getPlayers = players => ({ type: PLAYERS_RECEIVED, players });
 
-export const GET_PLAYER_STATS = 'GET_PLAYER_STATS';
-export const getPlayerStats = personId => ({ type: GET_PLAYER_STATS, personId });
+export const PLAYER_STATS_REQUESTED = 'PLAYER_STATS_REQUESTED';
+export const fetchPlayerStats = personId => ({ type: PLAYER_STATS_REQUESTED, personId });
+
+export const PLAYER_STATS_RECEIVED = 'PLAYER_STATS_RECEIVED';
+export const getPlayerStats = (personId, stats) => ({ type: PLAYER_STATS_RECEIVED, personId, stats });

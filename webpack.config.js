@@ -27,7 +27,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new CopyPlugin([{ from: 'public' }]),
     new HtmlWebpackPlugin({
-      template: 'index.html'
+      template: 'public/index.html'
     }),
     new BundleAnalyzerPlugin(),
   ],
