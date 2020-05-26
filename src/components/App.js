@@ -1,13 +1,13 @@
 import React from 'react';
-import FilteredPlayerList from '../containers/FilteredPlayerList';
 import './App.css';
+import PlayerList from './PlayerList';
 
 function App() {
 
   return (
     <div className='App'>
       <header className='App-header'>Welcome to NBA stats.</header>
-      <FilteredPlayerList />
+      <PlayerList />
     </div>
   );
 }

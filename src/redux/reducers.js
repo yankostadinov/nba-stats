@@ -21,10 +21,13 @@ const players = (state = [], action) => {
   }
 };
 
-const personId = (state = 0, action) => {
+const playerStats = (state = {}, action) => {
   switch (action.type) {
     case GET_PLAYER_STATS:
-      return action.personId;
+      return {
+        ...state,
+        [action.personId]: 'placeholder',
+      };
 
     default:
       return state;
@@ -33,6 +36,6 @@ const personId = (state = 0, action) => {
 
 export default combineReducers({
   players,
-  personId,
+  playerStats,
   searchFilter,
 });

@@ -1,15 +1,19 @@
-import PropTypes from 'prop-types';
 import React, { useRef } from 'react';
-import ClickablePlayer from '../containers/ClickablePlayer';
+import { useDispatch, useSelector } from 'react-redux';
+import { applySearchFilter, setPlayers } from '../redux/actions';
+import Player from './Player';
 import './PlayerList.css';
 
-function PlayerList({ players, setPlayers, applySearchFilter }) {
+function PlayerList() {
   const search = useRef();
-  const handleChange = () => applySearchFilter(search.current.value);
+  const dispatch = useDispatch();
+  const players = useSelector(state => state.players);
+  const searchFilter = useSelector(state => state.searchFilter);
+  const handleChange = () => dispatch(applySearchFilter(search.current.value));
 
   const handleButtonClick = () => {
     const cachedPlayers = localStorage.getItem('cachedPlayers');
-    setPlayers(JSON.parse(cachedPlayers));
+    dispatch(setPlayers(JSON.parse(cachedPlayers)));
   };
 
   return (
@@ -17,16 +21,12 @@ function PlayerList({ players, setPlayers, applySearchFilter }) {
       <input type='text' ref={search} onChange={handleChange} placeholder='Search players' />
       <input type='button' onClick={handleButtonClick} value='Refresh players' />
       <div id='player-list'>
-        {players.map(player => <ClickablePlayer {...player} key={player.personId} />)}
+        {players
+          .filter(player => player.temporaryDisplayName.toLowerCase().includes(searchFilter))
+          .map(player => <Player {...player} key={player.personId} />)}
       </div>
     </div>
   );
 }
-
-PlayerList.propTypes = {
-  players: PropTypes.arrayOf(PropTypes.object).isRequired,
-  applySearchFilter: PropTypes.func.isRequired,
-  setPlayers: PropTypes.func.isRequired,
-};
 
 export default PlayerList;
