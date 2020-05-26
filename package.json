@@ -12,9 +12,13 @@
   },
   "private": true,
   "dependencies": {
+    "axios": "^0.19.2",
     "electron-is-dev": "^1.2.0",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5"
   },
   "scripts": {
     "start": "webpack --mode development",
@@ -32,6 +36,7 @@
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.1.0",
+    "babel-polyfill": "^6.26.0",
     "concurrently": "^5.2.0",
     "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^3.5.3",
@@ -40,10 +45,12 @@
     "electron-reload": "^1.5.0",
     "eslint": "^6.6.0",
     "eslint-plugin-react": "7.19.0",
+    "html-webpack-plugin": "^4.3.0",
     "react-hot-loader": "^4.12.21",
     "style-loader": "^1.2.1",
     "wait-on": "^5.0.0",
     "webpack": "^4.43.0",
+    "webpack-bundle-analyzer": "^3.8.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0"
   }
