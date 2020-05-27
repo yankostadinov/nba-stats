@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { PLAYERS_RECEIVED, PLAYER_STATS_RECEIVED } from './actions';
+import { PLAYERS_RECEIVED, PLAYER_STATS_RECEIVED, PLAYER_STATS_REQUESTED } from './actions';
 
 const players = (state = [], action) => {
   switch (action.type) {
@@ -13,10 +13,22 @@ const players = (state = [], action) => {
 
 const playerStats = (state = {}, action) => {
   switch (action.type) {
+    case PLAYER_STATS_REQUESTED:
+      return {
+        ...state,
+        [action.personId]: {
+          stats: {},
+          isFetching: true,
+        }
+      };
+
     case PLAYER_STATS_RECEIVED:
       return {
         ...state,
-        [action.personId]: action.stats,
+        [action.personId]: {
+          stats: action.stats,
+          isFetching: false,
+        }
       };
 
     default:

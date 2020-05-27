@@ -1,4 +1,5 @@
 .player {
+  display: inline-block;
   background-color: darkmagenta;
   font-size: calc(10px + 1vmin);
   min-width: 30vw;
@@ -6,4 +7,20 @@
   align-self: center;
   margin-bottom: 1px;
   border-radius: 5px;
+}
+
+.player .tooltip {
+  visibility: hidden;
+  position: absolute;
+  background-color: black;
+  z-index: 1;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #080c34;
+  width: 200px;
+  margin-left: -100px;
+}
+
+.player:hover .tooltip {
+  visibility: visible;
 }
