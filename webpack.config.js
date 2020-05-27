@@ -2,7 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: ['babel-polyfill', './src/index.js'],
@@ -27,9 +26,8 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new CopyPlugin([{ from: 'public' }]),
     new HtmlWebpackPlugin({
-      template: 'public/index.html'
+      template: 'index.html'
     }),
-    new BundleAnalyzerPlugin(),
   ],
   devServer: {
     hot: true,
