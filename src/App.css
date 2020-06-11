@@ -7,3 +7,12 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+a.player {
+  color: white;
+  text-decoration: none;
+}
+
+a.player:hover {
+  background-color: cadetblue;
+}

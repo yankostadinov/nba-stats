@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchPlayers } from '../redux/actions';
-import Player from './Player';
+import Player from '../components/Player';
 import './PlayerList.css';
 
 function PlayerList() {

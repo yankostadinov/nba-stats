@@ -5,9 +5,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: ['babel-polyfill', './src/index.js'],
+  devtool: 'inline-source-map',
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'main.js',
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -31,5 +33,6 @@ module.exports = {
   ],
   devServer: {
     hot: true,
-  }
+    historyApiFallback: true,
+  },
 };

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchPlayerStats } from '../redux/actions';
 import './Player.css';
 import PlayerStatsSummary from './PlayerStatsSummary';
+import { Link } from 'react-router-dom';
 
 function Player({ temporaryDisplayName, personId }) {
   const container = useRef();
@@ -17,7 +18,7 @@ function Player({ temporaryDisplayName, personId }) {
   };
 
   return (
-    <div className='player' ref={container} onPointerEnter={handlePointerEnter}>
+    <Link to={`/player/${personId}`} className='player' ref={container} onPointerEnter={handlePointerEnter}>
       <div className='player-name'>{temporaryDisplayName}</div>
       {playerStats && <span className='tooltip'>
         {playerStats.isFetching
@@ -26,7 +27,7 @@ function Player({ temporaryDisplayName, personId }) {
         }
       </span>
       }
-    </div>
+    </Link>
   );
 }
 
