@@ -18,7 +18,7 @@ function Player({ temporaryDisplayName, personId }) {
   };
 
   return (
-    <Link to={`/player/${personId}`} className='player' ref={container} onPointerEnter={handlePointerEnter}>
+    <Link to={`/players/${personId}`} className='player' ref={container} onPointerEnter={handlePointerEnter}>
       <div className='player-name'>{temporaryDisplayName}</div>
       {playerStats && <span className='tooltip'>
         {playerStats.isFetching
