@@ -14,11 +14,11 @@ function PlayerStatsTooltip({ stats: { ppg, rpg, apg, bpg, spg } = {}, children 
           <Grid item xs={2}><Typography align='center'>SPG</Typography></Grid>
         </Grid>
         <Grid container justify='center'>
-          <Grid item xs={2}><Typography align='center'>{ppg}</Typography></Grid>
-          <Grid item xs={2}><Typography align='center'>{rpg}</Typography></Grid>
-          <Grid item xs={2}><Typography align='center'>{apg}</Typography></Grid>
-          <Grid item xs={2}><Typography align='center'>{bpg}</Typography></Grid>
-          <Grid item xs={2}><Typography align='center'>{spg}</Typography></Grid>
+          <Grid item xs={2}><Typography align='center'>{parseFloat(ppg).toFixed(1)}</Typography></Grid>
+          <Grid item xs={2}><Typography align='center'>{parseFloat(rpg).toFixed(1)}</Typography></Grid>
+          <Grid item xs={2}><Typography align='center'>{parseFloat(apg).toFixed(1)}</Typography></Grid>
+          <Grid item xs={2}><Typography align='center'>{parseFloat(bpg).toFixed(1)}</Typography></Grid>
+          <Grid item xs={2}><Typography align='center'>{parseFloat(spg).toFixed(1)}</Typography></Grid>
         </Grid>
       </Grid>
     }>
