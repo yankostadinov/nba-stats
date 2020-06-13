@@ -3,7 +3,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
 const Home = () => (
-  <Container maxWidth='sm'>
+  <Container>
     <Typography variant='h1' gutterBottom>Welcome to NBA stats</Typography>
   </Container>
 );

@@ -17,7 +17,7 @@ const App = () => <Provider store={store}>
   <div className='App'>
     <Router>
       <Navigation />
-      <Container className='main'>
+      <Container className='main' maxWidth={false}>
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/players' component={PlayerList} />
