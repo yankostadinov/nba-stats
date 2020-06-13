@@ -21,7 +21,9 @@ function Player({ temporaryDisplayName, personId }) {
     <Card elevation={5} ref={container}>
       <CardContent>
         <PlayerStatsTooltip loading={!playerStats || playerStats.isFetching} stats={playerStats && playerStats.stats}>
-          <Typography variant='h3' component={Link} color='textPrimary' to={`/players/${personId}`} onPointerEnter={handlePointerEnter}>{temporaryDisplayName}</Typography>
+          <Typography variant='h5' component={Link} color='textPrimary' to={`/players/${personId}`} onPointerEnter={handlePointerEnter}>
+            {temporaryDisplayName}
+          </Typography>
         </PlayerStatsTooltip>
       </CardContent>
     </Card>

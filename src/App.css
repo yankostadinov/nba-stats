@@ -18,11 +18,6 @@ body {
   overflow: auto;
 }
 
-a.player {
-  color: white;
+a {
   text-decoration: none;
-}
-
-a.player:hover {
-  background-color: cadetblue;
 }
