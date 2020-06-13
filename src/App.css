@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 .App {
   text-align: center;
   background-color: #282c34;
@@ -9,7 +13,9 @@
 }
 
 .main {
-  padding: 5vw;
+  padding: 5vh;
+  height: 95vh;
+  overflow: auto;
 }
 
 a.player {
