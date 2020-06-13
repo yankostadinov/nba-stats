@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import Container from '@material-ui/core/Container';
 import React from 'react';
 
 import Home from './screens/Home';
@@ -16,13 +17,15 @@ const App = () => <Provider store={store}>
   <div className='App'>
     <Router>
       <Navigation />
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/players' component={PlayerList} />
-        <Route exact path='/teams' component={TeamList} />
-        <Route path='/players/:personId' component={PlayerStats} />
-        <Route path='/teams/:teamId' component={TeamStats} />
-      </Switch>
+      <Container className='main'>
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/players' component={PlayerList} />
+          <Route exact path='/teams' component={TeamList} />
+          <Route path='/players/:personId' component={PlayerStats} />
+          <Route path='/teams/:teamId' component={TeamStats} />
+        </Switch>
+      </Container>
     </Router>
   </div>
 </Provider>;

@@ -8,6 +8,10 @@
   color: white;
 }
 
+.main {
+  padding: 5vw;
+}
+
 a.player {
   color: white;
   text-decoration: none;
